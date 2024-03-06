@@ -1,15 +1,21 @@
 function stringChop(str, size) {
   // your code here
-	for(let i=0;i<str.length;i++)
-		{
-			let result=[]
-			for(let j=0;j<size && i<str.length;j++)
-				{
-					let char=char+str[i];
-					i++;
-				}
-			result.push(char);
-		}
+	let result = [];
+
+  // Check for null or empty string
+  if (str === null || str.length === 0) {
+    return result;
+  }
+
+  for (let i = 0; i < str.length; i += size) {
+    let chunk = '';
+    for (let j = 0; j < size && i + j < str.length; j++) {
+      chunk += str[i + j];
+    }
+    result.push(chunk);
+  }
+
+  return result;
 	
 }
 
